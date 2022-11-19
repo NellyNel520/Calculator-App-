@@ -5,6 +5,12 @@ const calculator = {
     operator: null,
   };
 
+  function inputDigit(digit) {
+    const { displayValue } = calculator;
+    // Overwrite `displayValue` if the current value is '0' otherwise append to it
+    calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+  }
+
   function updateDisplay() {
     // select the element with class of `calculator-screen`
     const display = document.querySelector('.calculator-screen');
@@ -40,5 +46,6 @@ keys.addEventListener('click', (event) => {
     return;
   }
 
-  console.log('digit', target.value);
+  inputDigit(target.value);
+  updateDisplay();
 });
