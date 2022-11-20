@@ -19,6 +19,12 @@ const calculator = {
   }
 
   function inputDecimal(dot) {
+    /*Fixes bug so that if you enter a decimal point after clicking on an operator, it gets appended to the second operand instead of being a part of the first. */
+    if (calculator.waitingForSecondOperand === true) {
+        calculator.displayValue = '0.'
+      calculator.waitingForSecondOperand = false;
+      return
+    }
     // If the `displayValue` property does not contain a decimal point
     if (!calculator.displayValue.includes(dot)) {
       // Append the decimal point
