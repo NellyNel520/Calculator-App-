@@ -4,19 +4,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    
+
     <!--Google Font links-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@200&display=swap" rel="stylesheet">
 
+    <!--Font Awesome links-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/4d3a259dae.js" crossorigin="anonymous"></script>
     
     <title>Calculator App</title>
 </head>
 <body>
-    <main>
-        <h1>Calculator App</h1>
-        <div class="calculator">
+    <main id="page-container">
+        <header>Calculator App</header>
+        <div class="calculator" id="content-wrap">
 
         <input type="text" class="calculator-screen" value="0" disabled />
         
@@ -50,11 +53,17 @@
       
         </div>
       </div>
+      <footer id="footer">
+        <h4>Developed by: Channel Harris</h4>
+        <p>This app was created to a mimic a simple arithmetic calculator with using Javascript, HTML, and CSS grid.
+
+        </p>
+        <a class="github-link" target="_blank" href="https://github.com/NellyNel520"><i class="fa-brands fa-github fa-lg"></i></a>
+        <a class="website" target="_blank" href="https://channelharris.com/"><i class="fa-solid fa-desktop fa-lg"></i></a>
+    </footer>
     </main>
-    
-
-
-
     <script src="app.js"></script>
 </body>
+
+
 </html>

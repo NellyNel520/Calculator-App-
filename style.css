@@ -9,8 +9,13 @@ html {
     padding: 0;
     box-sizing: inherit;
   }
+  #page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+
   
-  h1 {
+  header {
     text-align: center;
     font-size: 4rem;
     padding: 4rem;
@@ -87,4 +92,19 @@ html {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
     padding: 20px;
+  }
+
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    font-size: 15px;
+    text-align: center;
+    padding: 1rem;
+    color: #bfbdbd;
+  }
+
+  #footer a{
+    color: #2c3be1;
   }
