@@ -54,8 +54,9 @@ const calculator = {
       calculator.firstOperand = inputValue;
     }  else if (operator) {
         const result = calculate(firstOperand, inputValue, operator);
-    
-        calculator.displayValue = String(result);
+    //*****BUG FIX ***
+        /*The toFixed() method accepts a value between 0 and 20, and ensures that the number of digits after the decimal point is restricted to that value. The return value may be rounded or padded with zeros if necessary. */
+        calculator.displayValue = `${parseFloat(result.toFixed(7))}`;
         calculator.firstOperand = result;
       }
     
