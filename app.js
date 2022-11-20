@@ -33,7 +33,7 @@ const calculator = {
     // `parseFloat` converts the string contents of `displayValue`
     // to a floating-point number
     const inputValue = parseFloat(displayValue);
-    
+
     /*The if statement checks if an operator already exists and if waitingForSecondOperand is set to true. If so, the value of the operator property is replaced with the new operator and the function exits so that no calculations are performed. */
     if (operator && calculator.waitingForSecondOperand)  {
         calculator.operator = nextOperator;
@@ -73,6 +73,14 @@ const calculator = {
     return secondOperand;
   }
 
+  function resetCalculator() {
+    calculator.displayValue = '0';
+    calculator.firstOperand = null;
+    calculator.waitingForSecondOperand = false;
+    calculator.operator = null;
+    console.log(calculator);
+  }
+
   function updateDisplay() {
     // select the element with class of `calculator-screen`
     const display = document.querySelector('.calculator-screen');
@@ -106,7 +114,8 @@ keys.addEventListener('click', (event) => {
   }
 
   if (target.classList.contains('all-clear')) {
-    console.log('clear', target.value);
+    resetCalculator();
+    updateDisplay();
     return;
   }
 
