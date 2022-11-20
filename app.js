@@ -39,10 +39,17 @@ const calculator = {
     if (firstOperand === null && !isNaN(inputValue)) {
       // Update the firstOperand property
       calculator.firstOperand = inputValue;
-    }
+    }  else if (operator) {
+        const result = calculate(firstOperand, inputValue, operator);
+    
+        calculator.displayValue = String(result);
+        calculator.firstOperand = result;
+      }
+    
   
     calculator.waitingForSecondOperand = true;
     calculator.operator = nextOperator;
+    console.log(calculator);
   }
 
   function calculate(firstOperand, secondOperand, operator) {
