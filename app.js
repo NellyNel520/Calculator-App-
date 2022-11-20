@@ -45,6 +45,20 @@ const calculator = {
     calculator.operator = nextOperator;
   }
 
+  function calculate(firstOperand, secondOperand, operator) {
+    if (operator === '+') {
+      return firstOperand + secondOperand;
+    } else if (operator === '-') {
+      return firstOperand - secondOperand;
+    } else if (operator === '*') {
+      return firstOperand * secondOperand;
+    } else if (operator === '/') {
+      return firstOperand / secondOperand;
+    }
+  
+    return secondOperand;
+  }
+
   function updateDisplay() {
     // select the element with class of `calculator-screen`
     const display = document.querySelector('.calculator-screen');
